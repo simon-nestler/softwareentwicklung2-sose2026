@@ -1,6 +1,6 @@
 v Methode fahren für ein Auto aufrufen. Wir lassen das Auto 200 Meter fahren.
 v Die Methode fahren prüft, dass die Strecke positiv ist.
-x Die Methode fahren prüft, dass wir maximal 10 km (10.000 Meter fahren).
+v Die Methode fahren prüft, dass wir maximal 10 km (10.000 Meter fahren).
 x Implementieren Sie die Fallunterscheidungen in der Methode fahren sowohl mit if/else als auch mit switch/case.
 x Ein zweites Auto-Objekt erstellen.
 x Personen sollen einen Namen haben.
