@@ -12,6 +12,10 @@ public class Auto {
     }
 
     public void fahren(int streckeInMetern) {
-        System.out.println("Das Auto fährt " + streckeInMetern + " Meter.");
+        if (streckeInMetern < 0) {
+            System.out.println("Die Strecke muss positiv sein.");
+        } else {
+            System.out.println("Das Auto fährt " + streckeInMetern + " Meter.");
+        }
     }
 }

@@ -1,5 +1,5 @@
-x Methode fahren für ein Auto aufrufen. Wir lassen das Auto 200 Meter fahren.
-x Die Methode fahren prüft, dass die Strecke positiv ist.
+v Methode fahren für ein Auto aufrufen. Wir lassen das Auto 200 Meter fahren.
+v Die Methode fahren prüft, dass die Strecke positiv ist.
 x Die Methode fahren prüft, dass wir maximal 10 km (10.000 Meter fahren).
 x Implementieren Sie die Fallunterscheidungen in der Methode fahren sowohl mit if/else als auch mit switch/case.
 x Ein zweites Auto-Objekt erstellen.
@@ -11,3 +11,6 @@ x Implementieren Sie eine Methode für den Fahrerwechsel
 x Implementieren Sie eine Methode zum Hinzufügen von Personen
 x Implementieren Sie eine Methode zum Entfernen von Personen
 x Stellen Sie sicher, dass nie mehr als fünf Personen im Auto sind.
+
+git config user.name "Dein Name"
+git config user.email "deine@email.de"
