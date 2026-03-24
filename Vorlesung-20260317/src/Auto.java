@@ -17,7 +17,7 @@ public class Auto {
     }
 
     public void addInsasse(Person insasse) {
-        // Logik zum Hinzufügen eines Insassen
+        // Logik zum Hinzufügen einer Insassen
     }
 
     public void removeInsasse(Person insasse) {
