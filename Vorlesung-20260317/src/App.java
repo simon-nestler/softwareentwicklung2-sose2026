@@ -3,14 +3,11 @@ public class App {
         Auto auto1 = new Auto();
         auto1.fahren(200);
 
-        Person[] insassen = new Person[4];
-        insassen[0] = new Person("Alice");
-        insassen[1] = new Person("Bob");
-        insassen[2] = new Person("Charlie");
-        // insassen[2].setIstFahrer();
-        insassen[3] = new Person("Diana");
-        // insassen[3].setIstFahrer();
-        Auto auto2 = new Auto("BMW", insassen);
-        auto2.fahren(0);
+        Auto auto2 = new Auto("BMW");
+        auto2.setFahrer(new Person("Diana"));
+        auto2.addInsasse(new Person("Alice"));
+        auto2.addInsasse(new Person("Bob"));
+        auto2.removeInsasse(new Person("Bob"));
+        auto2.fahren(10);
     }
 }

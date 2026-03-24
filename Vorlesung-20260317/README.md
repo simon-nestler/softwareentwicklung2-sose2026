@@ -6,8 +6,8 @@ v Ein zweites Auto-Objekt erstellen.
 v Personen sollen einen Namen haben.
 v Es soll nicht möglich sein, dass es namenlose Personen gibt.
 v Wenn eine Person einen Namen bekommen hat, soll dieser nicht mehr geändert werden.
-x Unterscheiden Sie zwischen Fahrer und Insassen (es gibt zwei Optionen: Entweder in der Klasse Person oder in der Klasse Auto) - schreiben Sie beide Optionen
-x Implementieren Sie eine Methode für den Fahrerwechsel
+v Unterscheiden Sie zwischen Fahrer und Insassen (es gibt zwei Optionen: Entweder in der Klasse Person oder in der Klasse Auto) - schreiben Sie beide Optionen
+v Implementieren Sie eine Methode für den Fahrerwechsel
 x Implementieren Sie eine Methode zum Hinzufügen von Personen
 x Implementieren Sie eine Methode zum Entfernen von Personen
 x Stellen Sie sicher, dass nie mehr als fünf Personen im Auto sind.
