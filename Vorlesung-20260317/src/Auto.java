@@ -17,15 +17,35 @@ public class Auto {
     }
 
     public void addInsasse(Person insasse) {
-        // Logik zum Hinzufügen einer Insassen
+        for (int i = 0; i < insassen.length; i++) {
+            if (insassen[i] == null) {
+                insassen[i] = insasse;
+                return;
+            }
+        }
+        System.out.println("Das Auto ist voll und kann keinen weiteren Insassen aufnehmen.");
     }
 
     public void removeInsasse(Person insasse) {
-        // Logik zum Entfernen eines Insassen
+        for (int i = 0; i < insassen.length; i++) {
+            if (insassen[i] != null && insassen[i].getName().equals(insasse.getName())) {
+                insassen[i] = null;
+                return;
+            }
+        }
+        System.out.println("Der Insasse " + insasse.getName() + " ist nicht im Auto.");
     }
 
     public void inhaltAusgeben() {
-        // Logik zum Ausgeben der Insassen und des Fahrers
+        System.out.println("--------------------");
+        System.out.println("Auto: " + name);
+        System.out.println("Fahrer: " + (fahrer != null ? fahrer.getName() : "Kein Fahrer"));
+        System.out.println("Insassen:");
+        for (int i = 0; i < insassen.length; i++) {
+            if (insassen[i] != null) {
+                System.out.println("- " + insassen[i].getName());
+            }
+        }
     }
 
     public void fahren(int streckeInMetern) {

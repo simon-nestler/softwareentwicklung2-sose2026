@@ -4,10 +4,17 @@ public class App {
         auto1.fahren(200);
 
         Auto auto2 = new Auto("BMW");
+        auto2.inhaltAusgeben();
+
         auto2.setFahrer(new Person("Diana"));
         auto2.addInsasse(new Person("Alice"));
+
         auto2.addInsasse(new Person("Bob"));
+        auto2.inhaltAusgeben();
+
         auto2.removeInsasse(new Person("Bob"));
+        auto2.inhaltAusgeben();
+
         auto2.fahren(10);
     }
 }
