@@ -1,4 +1,5 @@
 public class Auto {
+    private Person fahrer;
     private Person[] insassen;
     private String name;
     public static final int HOECHSTGESCHWINDIGKEIT = 250;
@@ -13,6 +14,11 @@ public class Auto {
     }
 
     public void fahren(int streckeInMetern) {
+        if (fahrer == null) {
+            System.out.println("Das Auto hat keinen Fahrer und kann nicht fahren.");
+            return;
+        }
+
         if ((streckeInMetern < 0) || (streckeInMetern > MAXSTRECKE)) {
             System.out.println("Die Strecke muss positiv und kleiner als " + MAXSTRECKE + " Meter sein.");
         } else {
