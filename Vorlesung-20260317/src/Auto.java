@@ -8,13 +8,21 @@ public class Auto {
     public Auto() {
     }
 
-    public Auto(String name, Person[] insassen) {
+    public Auto(String name) {
         this.name = name;
-        this.insassen = insassen;
+        // this.insassen = insassen;
     }
 
     public void setFahrer(Person fahrer) {
         this.fahrer = fahrer;
+    }
+
+    public void addInsasse(Person insasse) {
+        // Logik zum Hinzufügen eines Insassen
+    }
+
+    public void removeInsasse(Person insasse) {
+        // Logik zum Entfernen eines Insassen
     }
 
     public void fahren(int streckeInMetern) {
