@@ -1,5 +1,14 @@
 public class App {
     public static void main(String[] args) throws Exception {
+        Person alice = new Person("Alice");
+        System.out.println("Name der Person: " + alice.getName());
+
+        Person bob = new Person(alice);
+        bob.setName("Bob");
+        System.out.println("Name der Person: " + bob.getName());
+
+        System.out.println("Name der Person: " + alice.getName());
+
         Auto auto1 = new Auto();
         auto1.fahren(200);
 
