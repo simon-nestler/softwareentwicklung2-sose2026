@@ -1,6 +1,6 @@
 public class Auto {
     private Person fahrer;
-    private Person[] insassen;
+    private Person[] insassen = new Person[4];
     private String name;
     public static final int HOECHSTGESCHWINDIGKEIT = 250;
     public static final int MAXSTRECKE = 10000;
@@ -10,7 +10,6 @@ public class Auto {
 
     public Auto(String name) {
         this.name = name;
-        // this.insassen = insassen;
     }
 
     public void setFahrer(Person fahrer) {
@@ -23,6 +22,10 @@ public class Auto {
 
     public void removeInsasse(Person insasse) {
         // Logik zum Entfernen eines Insassen
+    }
+
+    public void inhaltAusgeben() {
+        // Logik zum Ausgeben der Insassen und des Fahrers
     }
 
     public void fahren(int streckeInMetern) {
