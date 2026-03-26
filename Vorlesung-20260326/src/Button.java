@@ -27,4 +27,23 @@ public class Button {
     public static int getAnzahlButtons() {
         return anzahlButtons;
     }
+
+    public void zeichnen() {
+        System.out.println("Button zeichnen");
+        hintergrundFuellen();
+        textSchreiben();
+        rahmenZeichnen();
+    }
+
+    public void hintergrundFuellen() {
+        System.out.println("Hintergrund des Buttons füllen.");
+    }
+
+    public void textSchreiben() {
+        System.out.println("Text auf den Button schreiben.");
+    }
+
+    public void rahmenZeichnen() {
+        System.out.println("Rahmen des Buttons zeichnen.");
+    }
 }
