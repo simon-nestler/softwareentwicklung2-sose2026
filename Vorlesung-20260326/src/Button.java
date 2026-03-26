@@ -30,8 +30,11 @@ public class Button {
 
     public void zeichnen() {
         System.out.println("Button zeichnen");
+        int a = 10;
+        System.out.println("a: " + a);
         hintergrundFuellen();
-        textSchreiben();
+        textSchreiben(a);
+        a = 20;
         rahmenZeichnen();
     }
 
@@ -39,11 +42,21 @@ public class Button {
         System.out.println("Hintergrund des Buttons füllen.");
     }
 
-    public void textSchreiben() {
+    public void textSchreiben(int max) {
+        System.out.println("max: " + max);
         System.out.println("Text auf den Button schreiben.");
+        int georg = schriftWaehlen();
+        System.out.println("georg: " + georg);
     }
 
     public void rahmenZeichnen() {
         System.out.println("Rahmen des Buttons zeichnen.");
+    }
+
+    public int schriftWaehlen() {
+        int b = 20;
+        System.out.println("Schriftart für den Button wählen.");
+        System.out.println("b: " + b);
+        return b;
     }
 }
