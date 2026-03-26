@@ -34,7 +34,7 @@ public class Button {
         System.out.println("a: " + a);
         hintergrundFuellen();
         textSchreiben(a);
-        a = 20;
+        System.out.println("a: " + a);
         rahmenZeichnen();
     }
 
@@ -43,10 +43,11 @@ public class Button {
     }
 
     public void textSchreiben(int max) {
+        max = max * 2;
         System.out.println("max: " + max);
         System.out.println("Text auf den Button schreiben.");
-        int georg = schriftWaehlen();
-        System.out.println("georg: " + georg);
+        // int georg = schriftWaehlen();
+        // System.out.println("georg: " + georg);
     }
 
     public void rahmenZeichnen() {
