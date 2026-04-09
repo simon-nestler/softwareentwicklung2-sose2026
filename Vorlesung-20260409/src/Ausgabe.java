@@ -34,6 +34,10 @@ public class Ausgabe {
 
         System.out.printf("Heute ist der %td.%<tm.%<tY.%n", time);
 
+        System.out.printf("Aktuelle Uhrzeit %TR %n", time);
+        System.out.printf("Aktuelle Uhrzeit %tH:%tM %n", time, time);
+        System.out.printf("Aktuelle Uhrzeit %tH:%<tM %n", time);
+
         System.out.println("Heute ist der 09.04.2026.");
     }
 }
