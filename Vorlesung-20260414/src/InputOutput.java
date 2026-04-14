@@ -1,5 +1,6 @@
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -28,6 +29,18 @@ public class InputOutput {
         String name = scanner.nextLine();
         System.out.println("Hallo, " + name + "!");
         scanner.close();
+    }
+
+    public static void lesenAusDatei() {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("Test.txt"));
+            String line = reader.readLine();
+            System.out.println(line);
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public static int zahlLesenVonKonsole() {

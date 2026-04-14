@@ -3,11 +3,14 @@ public class App {
         // InputOutput.schreibenAufKonsole();
         // InputOutput.inDateiSchreiben();
 
-        System.out.println("Die eingegebene Zahl lautet: " + InputOutput.zahlLesenVonKonsole());
+        // System.out.println("Die eingegebene Zahl lautet: " +
+        // InputOutput.zahlLesenVonKonsole());
 
         // InputOutput.lesenVonKonsoleMitSystemIn();
         // InputOutput.lesenVonKonsoleMitScanner();
         // InputOutput.lesenVonKonsoleMitBufferedReader();
         // InputOutput.lesenMitGui();
+
+        InputOutput.lesenAusDatei();
     }
 }
