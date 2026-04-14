@@ -1,0 +1,2 @@
+Hello, Ingolstadt!
+The value of pi is approximately 3,14
