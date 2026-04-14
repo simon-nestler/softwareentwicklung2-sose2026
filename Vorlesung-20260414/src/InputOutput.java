@@ -34,8 +34,13 @@ public class InputOutput {
     public static void lesenAusDatei() {
         try {
             BufferedReader reader = new BufferedReader(new FileReader("Test.txt"));
-            String line = reader.readLine();
-            System.out.println(line);
+            String line = "";
+            while (line != null) {
+                line = reader.readLine();
+                if (line != null) {
+                    System.out.println(line);
+                }
+            }
             reader.close();
         } catch (IOException e) {
             e.printStackTrace();
