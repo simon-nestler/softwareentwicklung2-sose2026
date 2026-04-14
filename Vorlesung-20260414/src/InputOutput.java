@@ -30,18 +30,24 @@ public class InputOutput {
         scanner.close();
     }
 
-    public static void zahlLesenVonKonsole() {
+    public static int zahlLesenVonKonsole() {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        System.out.print("Geben Sie eine Zahl ein: ");
-        try {
-            String s = reader.readLine();
-            int i = Integer.parseInt(s);
-            System.out.println("Die Zahl lautet: " + i);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (NumberFormatException e) {
-            System.out.println("Ungültige Zahl eingegeben.");
+        boolean validInput = false;
+
+        while (!validInput) {
+            System.out.print("Geben Sie eine Zahl ein: ");
+            try {
+                String s = reader.readLine();
+                int i = Integer.parseInt(s);
+                validInput = true;
+                return i;
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (NumberFormatException e) {
+                System.out.println("Ungültige Zahl eingegeben.");
+            }
         }
+        return 0;
     }
 
     public static void lesenVonKonsoleMitBufferedReader() {
