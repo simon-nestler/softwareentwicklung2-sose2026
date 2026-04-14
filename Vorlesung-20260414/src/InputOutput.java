@@ -18,7 +18,7 @@ public class InputOutput {
     }
 
     private static void schreiben(PrintWriter writer) {
-        writer.println("Hello, World!");
+        writer.println("Hello, World! \n Was für ein schöner Tag!");
         writer.printf("The value of pi is approximately %.2f%n", Math.PI);
         writer.close();
     }
