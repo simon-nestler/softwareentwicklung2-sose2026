@@ -3,8 +3,10 @@ public class App {
         // InputOutput.schreibenAufKonsole();
         // InputOutput.inDateiSchreiben();
 
+        InputOutput.zahlLesenVonKonsole();
         // InputOutput.lesenVonKonsoleMitSystemIn();
         // InputOutput.lesenVonKonsoleMitScanner();
-        InputOutput.lesenVonKonsoleMitBufferedReader();
+        // InputOutput.lesenVonKonsoleMitBufferedReader();
+        // InputOutput.lesenMitGui();
     }
 }

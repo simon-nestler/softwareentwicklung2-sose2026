@@ -5,6 +5,8 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 public class InputOutput {
     public static void schreibenAufKonsole() {
         PrintWriter writer = new PrintWriter(System.out, true);
@@ -28,6 +30,20 @@ public class InputOutput {
         scanner.close();
     }
 
+    public static void zahlLesenVonKonsole() {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Geben Sie eine Zahl ein: ");
+        try {
+            String s = reader.readLine();
+            int i = Integer.parseInt(s);
+            System.out.println("Die Zahl lautet: " + i);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (NumberFormatException e) {
+            System.out.println("Ungültige Zahl eingegeben.");
+        }
+    }
+
     public static void lesenVonKonsoleMitBufferedReader() {
         InputStreamReader inputStreamReader = new InputStreamReader(System.in);
         BufferedReader reader = new BufferedReader(inputStreamReader);
@@ -38,6 +54,12 @@ public class InputOutput {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void lesenMitGui() {
+        String s = JOptionPane.showInputDialog("Bitte Zahl eingeben");
+        int i = Integer.parseInt(s);
+        System.out.println("Ergebnis i*i: " + i * i);
     }
 
     public static void inDateiSchreiben() {
