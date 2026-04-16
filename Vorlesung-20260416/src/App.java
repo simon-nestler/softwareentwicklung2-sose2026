@@ -3,7 +3,10 @@ public class App {
         // personenTest();
 
         VerketteteListe liste = new VerketteteListe();
-        liste.anhangen("Hallo");
+        liste.anhaengen("Max");
+        liste.anhaengen("Anna");
+        liste.anhaengen("Lisa");
+        liste.printList();
     }
 
     public static void personenTest() {

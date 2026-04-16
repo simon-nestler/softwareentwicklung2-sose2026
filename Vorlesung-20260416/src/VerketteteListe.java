@@ -1,7 +1,15 @@
 public class VerketteteListe {
     private ListenElement kopf;
 
-    public void anhangen(String inhalt) {
-        this.kopf = new ListenElement(inhalt);
+    public void anhaengen(String inhalt) {
+        if (kopf == null) {
+            kopf = new ListenElement(inhalt);
+        } else {
+            kopf.nachfolgerAnhaengen(inhalt);
+        }
+    }
+
+    public void printList() {
+        kopf.printElement();
     }
 }
