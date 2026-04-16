@@ -11,15 +11,27 @@ public class Person {
     }
 
     public Person getGrossMutter() {
-        return null;
+        if (this.getMutter() != null) {
+            return this.getMutter().getMutter();
+        } else {
+            return null;
+        }
     }
 
     public Person getUrGrossMutter() {
-        return null;
+        if (this.getGrossMutter() != null) {
+            return this.getGrossMutter().getMutter();
+        } else {
+            return null;
+        }
     }
 
     public Person getMutter() {
         return mutter;
+    }
+
+    public void setMutter(Person mutter) {
+        this.mutter = mutter;
     }
 
     public String getName() {
