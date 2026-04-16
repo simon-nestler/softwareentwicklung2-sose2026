@@ -1,6 +1,9 @@
 public class App {
     public static void main(String[] args) throws Exception {
         // personenTest();
+
+        VerketteteListe liste = new VerketteteListe();
+        liste.anhangen("Hallo");
     }
 
     public static void personenTest() {
