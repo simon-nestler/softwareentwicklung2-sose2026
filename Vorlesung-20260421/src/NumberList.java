@@ -17,4 +17,12 @@ public class NumberList {
             prev.next = q;
         }
     }
+
+    public void print() {
+        NumberNode p = head;
+        while (p != null) {
+            System.out.println(p.value);
+            p = p.next;
+        }
+    }
 }
