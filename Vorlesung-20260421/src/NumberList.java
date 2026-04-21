@@ -19,10 +19,12 @@ public class NumberList {
     }
 
     public void print() {
+        System.out.println("Die Liste enthält folgende Werte:");
         NumberNode p = head;
         while (p != null) {
-            System.out.println(p.value);
+            System.out.print(p.value + ", ");
             p = p.next;
         }
+        System.out.println(); // Neuer Zeile
     }
 }
