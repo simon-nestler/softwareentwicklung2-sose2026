@@ -1,7 +1,45 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class App {
     public static void main(String[] args) throws Exception {
         // manuellerWeg();
+        // listenErzeugen();
 
+        // generischeListenErzeugen();
+        arbeitenMitJavaApi();
+
+    }
+
+    public static void arbeitenMitJavaApi() {
+        ArrayList<String> list = new ArrayList<String>();
+        list.add("abc");
+
+    }
+
+    public static void generischeListenErzeugen() {
+        XyList<String> list0 = new XyList<String>();
+        list0.add("abc");
+        list0.add("def");
+        list0.print();
+
+        XyList<Integer> list1 = new XyList<Integer>();
+        list1.add(10);
+        list1.add(12);
+        list1.print();
+
+        XyList<Character> list2 = new XyList<Character>();
+        list2.add('a');
+        list2.add('b');
+        list2.print();
+
+        XyList<XyPerson> list3 = new XyList<XyPerson>();
+        list3.add(new XyPerson("Alice"));
+        list3.add(new XyPerson("Bob"));
+        list3.print();
+    }
+
+    public static void listenErzeugen() {
         NumberList list0 = new NumberList();
         list0.add(10);
         list0.print();
