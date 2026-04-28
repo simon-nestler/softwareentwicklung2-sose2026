@@ -5,3 +5,8 @@ Wie oft kommt "abc" in der Liste vor?
 Was steht an Index 2? Geben Sie es aus.
 Setzen Sie Element an Index 2 auf "XY".
 Geben Sie Element an Index 2 aus.
+Löschen Sie Element an Index 0.
+Geben Sie Element an Index 2 aus.
+Erzeugen Sie eine Kopie (list1) der Liste (shallow copy).
+Löschen Sie Element an Index 0.
+Geben Sie list und list1 aus.

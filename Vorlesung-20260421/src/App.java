@@ -12,8 +12,53 @@ public class App {
     }
 
     public static void arbeitenMitJavaApi() {
+        String[] stringArray = new String[10];
         ArrayList<String> list = new ArrayList<String>();
         list.add("abc");
+
+        // Fügen Sie drei Strings in die Liste hinzu
+        list.add("def");
+        list.add("ghi");
+        list.add("jkl");
+
+        // Geben Sie den Index von "abc" aus
+        System.out.println("Index von abc ist: " + list.indexOf("abc"));
+
+        // Fügen Sie "abc" ein zweites Mal hinzu
+        list.add("abc");
+
+        // Wie oft kommt "abc" in der Liste vor?
+        int abcCount = 0;
+        for (String s : list) {
+            if (s.equals("abc")) {
+                abcCount++;
+            }
+        }
+        System.out.println("Anzahl von abc ist: " + abcCount);
+
+        // Was steht an Index 2? Geben Sie es aus.
+        System.out.println("Element an Index 2 ist: " + list.get(2));
+
+        // Setzen Sie Element an Index 2 auf "XY".
+        list.set(2, "XY");
+        stringArray[2] = "XY";
+
+        // Löschen Sie Element an Index 0.
+        list.remove(0);
+
+        // Kopieren der Liste mithilfe des Konstruktors
+        ArrayList<String> list1 = new ArrayList<String>(list);
+
+        // Geben Sie list und list1 aus.
+        System.out.println("list: " + list);
+        System.out.println("list1: " + list1);
+
+        // Löschen Sie Element an Index 0.
+        list1.remove(0);
+
+        // Geben Sie list und list1 aus.
+        System.out.println("list: " + list);
+        System.out.println("list1: " + list1);
 
     }
 
