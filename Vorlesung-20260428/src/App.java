@@ -1,7 +1,7 @@
 public class App {
     public static void main(String[] args) throws Exception {
         long start, end;
-        int n = 10000;
+        int n = 5;
 
         start = System.currentTimeMillis();
         System.out.println("Rekursion: " + Rekursion.fakultaet(n));

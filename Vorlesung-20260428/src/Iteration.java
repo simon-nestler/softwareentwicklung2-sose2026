@@ -1,8 +1,15 @@
 public class Iteration {
 
     public static int fakultaet(int n) {
-        // TODO
+        int ergebnis = 1;
+        for (int i = 1; i <= n; i++) {
+            ergebnis = ergebnis * i;
+        }
 
-        return n;
+        // for (int i = n; i >= 1; i--) {
+        // ergebnis = ergebnis * i;
+        // }
+
+        return ergebnis;
     }
 }
