@@ -1,6 +1,6 @@
 public class Iteration {
 
-    public static int fakultaet(int n) {
+    public static long fakultaet(long n) {
         int ergebnis = 1;
         for (int i = 1; i <= n; i++) {
             ergebnis = ergebnis * i;
