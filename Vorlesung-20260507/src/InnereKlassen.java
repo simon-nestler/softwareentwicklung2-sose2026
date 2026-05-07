@@ -12,16 +12,37 @@ public class InnereKlassen extends JFrame {
     private JLabel jlabel;
     private JPanel panel;
 
+    private class Button1Listener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            jlabel.setText("Button1 wurde gedrückt");
+        }
+    }
+
+    private class Button2Listener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            jlabel.setText("Button2 wurde gedrückt");
+        }
+    }
+
+    private class Button3Listener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            jlabel.setText("Button3 wurde gedrückt");
+        }
+    }
+
     public InnereKlassen() {
-        setTitle("Zentralisierte Ereignisverarbeitung");
+        setTitle("Ereignisverarbeitung mit inneren Klassen");
         setSize(400, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         button1 = new JButton("Button1");
+        button1.addActionListener(new Button1Listener());
 
         button2 = new JButton("Button2");
+        button2.addActionListener(new Button2Listener());
 
         button3 = new JButton("Button3");
+        button3.addActionListener(new Button3Listener());
 
         jlabel = new JLabel("leer");
 
