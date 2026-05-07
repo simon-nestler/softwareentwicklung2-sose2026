@@ -1,3 +1,4 @@
+import javax.swing.Action;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -6,24 +7,21 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ZentralisierteErgeignisverarbeitung extends JFrame implements ActionListener {
+public class InnereKlassen extends JFrame {
     private JButton button1, button2, button3;
     private JLabel jlabel;
     private JPanel panel;
 
-    public ZentralisierteErgeignisverarbeitung() {
+    public InnereKlassen() {
         setTitle("Zentralisierte Ereignisverarbeitung");
         setSize(400, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         button1 = new JButton("Button1");
-        button1.addActionListener(this);
 
         button2 = new JButton("Button2");
-        button2.addActionListener(this);
 
         button3 = new JButton("Button3");
-        button3.addActionListener(this);
 
         jlabel = new JLabel("leer");
 
@@ -37,15 +35,4 @@ public class ZentralisierteErgeignisverarbeitung extends JFrame implements Actio
 
         add(panel);
     }
-
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == button1) {
-            jlabel.setText("Button1 wurde gedrückt");
-        } else if (e.getSource() == button2) {
-            jlabel.setText("Button2 wurde gedrückt");
-        } else if (e.getSource() == button3) {
-            jlabel.setText("Button3 wurde gedrückt");
-        }
-    }
-
 }
