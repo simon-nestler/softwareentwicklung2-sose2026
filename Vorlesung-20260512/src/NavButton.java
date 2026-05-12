@@ -27,5 +27,7 @@ public class NavButton extends JButton {
         int ty = (getHeight() + fm.getAscent() - fm.getDescent()) / 2;
         g2.drawString(getText(), tx, ty);
         g2.dispose();
+
+        super.paintComponent(g);
     }
 }

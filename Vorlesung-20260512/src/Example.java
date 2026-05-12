@@ -21,7 +21,7 @@ public class Example extends JPanel {
         g.drawOval(20, 30, 200, 100);
 
         g.setColor(Color.BLUE);
-        g.fillArc(20, 30, 200, 100, 0, 180);
+        g.fillArc(20, 30, 200, 100, 90, 180);
 
         g.drawLine(20, 30, 220, 130);
 
