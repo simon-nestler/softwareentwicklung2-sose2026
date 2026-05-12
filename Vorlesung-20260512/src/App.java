@@ -6,7 +6,7 @@ public class App {
 
         JFrame frame = new JFrame("Example");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400, 300);
+        frame.setSize(600, 600);
         frame.add(new Example());
         frame.setVisible(true);
     }
