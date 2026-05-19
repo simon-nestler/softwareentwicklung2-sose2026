@@ -1,5 +1,10 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        Fahrzeug f = new Fahrzeug();
+        f.fahren(-10);
+        f.stoppen();
+        f.fahren(50);
+        f.stoppen();
+        f.stoppen();
     }
 }
