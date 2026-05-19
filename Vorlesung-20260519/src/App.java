@@ -1,5 +1,12 @@
 public class App {
     public static void main(String[] args) throws Exception {
+        Motorrad m = new Motorrad();
+        m.setName("Das Motorrad");
+        System.out.println(m);
+    }
+
+    public static void fahrzeuge() {
+
         Fahrzeug f = new Fahrzeug();
         f.fahren(-100);
         f.stoppen();
