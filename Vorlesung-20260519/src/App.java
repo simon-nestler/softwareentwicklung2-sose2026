@@ -1,5 +1,9 @@
 public class App {
     public static void main(String[] args) throws Exception {
+        C c = new C();
+    }
+
+    public static void motorrad() {
         Motorrad m = new Motorrad();
         m.setName("Das Motorrad");
         System.out.println(m);
