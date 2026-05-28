@@ -1,6 +1,6 @@
 public class Fahrzeug {
-    private int anzahlRaeder;
-    private int hoechstgeschwindigkeit;
+    protected int anzahlRaeder;
+    protected int hoechstgeschwindigkeit;
 
     // Protected, damit die Unterklassen darauf zugreifen können
     protected int geschwindigkeit;
