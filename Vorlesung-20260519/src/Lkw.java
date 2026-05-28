@@ -13,4 +13,8 @@ public class Lkw extends Fahrzeug {
         this.name = "Der Lkw";
     }
 
+    public void hupe() {
+        System.out.println("Tröööt!");
+    }
+
 }

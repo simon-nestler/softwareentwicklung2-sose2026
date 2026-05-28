@@ -1,4 +1,6 @@
-public class Fahrzeug {
+public abstract class Fahrzeug {
+    // Von abstrakten Klassen können keine Objekte erstellt werden.
+
     protected int anzahlRaeder;
     protected int hoechstgeschwindigkeit;
 
@@ -84,13 +86,12 @@ public class Fahrzeug {
         this.geschwindigkeit = 0;
     }
 
-    /*
-     * @Override
-     * public String toString() {
-     * return name + " mit " + this.anzahlRaeder +
-     * " Rädern, Höchstgeschwindigkeit: "
-     * + this.hoechstgeschwindigkeit + " km/h, aktuelle Geschwindigkeit: "
-     * + this.geschwindigkeit + " km/h";
-     * }
-     */
+    @Override
+    public String toString() {
+        return name + " mit " + this.anzahlRaeder +
+                " Rädern, Höchstgeschwindigkeit: "
+                + this.hoechstgeschwindigkeit + " km/h, aktuelle Geschwindigkeit: "
+                + this.geschwindigkeit + " km/h";
+    }
+
 }

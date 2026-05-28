@@ -86,32 +86,33 @@ public class App {
     public static void fahrzeuge() {
 
         ArrayList<Fahrzeug> fahrzeuge = new ArrayList<Fahrzeug>();
+        int[] geschwindigkeit1 = { -100, -10, -20, -30 };
+        int[] geschwindigkeit2 = { 500, 50, 100, 150 };
 
-        fahrzeuge.add(new Fahrzeug());
+        fahrzeuge.add(new Pkw());
+        fahrzeuge.add(new Pkw());
+        fahrzeuge.add(new Lkw());
+        fahrzeuge.add(new Lkw());
 
-        fahrzeuge.get(0).fahren(-100);
-        fahrzeuge.get(0).stoppen();
-        fahrzeuge.get(0).fahren(500);
-        fahrzeuge.get(0).stoppen();
-        fahrzeuge.get(0).stoppen();
-        System.out.println(fahrzeuge.get(0));
+        for (int j = 0; j < fahrzeuge.size(); j++) {
+            fahrzeuge.get(j).fahren(geschwindigkeit1[j]);
+            fahrzeuge.get(j).stoppen();
+            fahrzeuge.get(j).fahren(geschwindigkeit2[j]);
+            fahrzeuge.get(j).stoppen();
 
-        System.out.println("---");
+            System.out.println(fahrzeuge.get(j));
 
-        Pkw p = new Pkw();
-        p.fahren(-10);
-        p.stoppen();
-        p.fahren(50);
-        p.stoppen();
-        System.out.println(p);
+            // Wir brauchen hier eine Fallunterscheidung, weil Pkw und Lkw unterschiedliche
+            // Methoden haben, um ein Geräusch zu machen.
+            if (fahrzeuge.get(j) instanceof Pkw) {
+                Pkw pkw = (Pkw) fahrzeuge.get(j);
+                pkw.gerauschMachen();
+            } else if (fahrzeuge.get(j) instanceof Lkw) {
+                Lkw lkw = (Lkw) fahrzeuge.get(j);
+                lkw.hupe();
+            }
 
-        System.out.println("---");
-
-        Lkw l = new Lkw();
-        l.fahren(-20);
-        l.stoppen();
-        l.fahren(100);
-        l.stoppen();
-        System.out.println(l);
+            System.out.println("---");
+        }
     }
 }

@@ -12,4 +12,8 @@ public class Pkw extends Fahrzeug {
         super(anzahlRaeder, hoechstgeschwindigkeit);
         this.name = "Der Pkw";
     }
+
+    public void gerauschMachen() {
+        System.out.println("Hup Hup!");
+    }
 }
