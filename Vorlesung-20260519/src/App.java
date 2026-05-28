@@ -86,13 +86,14 @@ public class App {
     public static void fahrzeuge() {
 
         ArrayList<Fahrzeug> fahrzeuge = new ArrayList<Fahrzeug>();
-        int[] geschwindigkeit1 = { -100, -10, -20, -30 };
-        int[] geschwindigkeit2 = { 500, 50, 100, 150 };
+        int[] geschwindigkeit1 = { -100, -10, -20, -30, -100 };
+        int[] geschwindigkeit2 = { 500, 50, 100, 150, 500 };
 
         fahrzeuge.add(new Pkw());
         fahrzeuge.add(new Pkw());
         fahrzeuge.add(new Lkw());
         fahrzeuge.add(new Lkw());
+        fahrzeuge.add(new Motorrad());
 
         for (int j = 0; j < fahrzeuge.size(); j++) {
             fahrzeuge.get(j).fahren(geschwindigkeit1[j]);
@@ -104,14 +105,22 @@ public class App {
 
             // Wir brauchen hier eine Fallunterscheidung, weil Pkw und Lkw unterschiedliche
             // Methoden haben, um ein Geräusch zu machen.
-            if (fahrzeuge.get(j) instanceof Pkw) {
-                Pkw pkw = (Pkw) fahrzeuge.get(j);
-                pkw.gerauschMachen();
-            } else if (fahrzeuge.get(j) instanceof Lkw) {
-                Lkw lkw = (Lkw) fahrzeuge.get(j);
-                lkw.hupe();
-            }
 
+            // Wenn wir keine abstrakte Methode in Fahrzeug hätten.
+            /*
+             * if (fahrzeuge.get(j) instanceof Pkw) {
+             * Pkw pkw = (Pkw) fahrzeuge.get(j);
+             * pkw.geraeuschMachen();
+             * } else if (fahrzeuge.get(j) instanceof Lkw) {
+             * Lkw lkw = (Lkw) fahrzeuge.get(j);
+             * lkw.geraeuschMachen();
+             * } else if (fahrzeuge.get(j) instanceof Motorrad) {
+             * Motorrad motorrad = (Motorrad) fahrzeuge.get(j);
+             * motorrad.geraeuschMachen();
+             * }
+             */
+
+            fahrzeuge.get(j).geraeuschMachen();
             System.out.println("---");
         }
     }

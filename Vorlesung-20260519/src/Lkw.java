@@ -13,7 +13,8 @@ public class Lkw extends Fahrzeug {
         this.name = "Der Lkw";
     }
 
-    public void hupe() {
+    @Override
+    public void geraeuschMachen() {
         System.out.println("Tröööt!");
     }
 

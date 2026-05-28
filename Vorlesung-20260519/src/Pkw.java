@@ -13,7 +13,8 @@ public class Pkw extends Fahrzeug {
         this.name = "Der Pkw";
     }
 
-    public void gerauschMachen() {
+    @Override
+    public void geraeuschMachen() {
         System.out.println("Hup Hup!");
     }
 }

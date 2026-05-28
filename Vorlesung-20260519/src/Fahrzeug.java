@@ -86,6 +86,11 @@ public abstract class Fahrzeug {
         this.geschwindigkeit = 0;
     }
 
+    // Eine abstrakte Klasse darf abstrakte Methoden enthalten, muss es aber nicht.
+    // Eine abstrakte Methode hat keinen Rumpf (keine geschweiften Klammern),
+    // sondern endet mit einem Semikolon.
+    public abstract void geraeuschMachen();
+
     @Override
     public String toString() {
         return name + " mit " + this.anzahlRaeder +
