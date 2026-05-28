@@ -87,13 +87,14 @@ public class App {
 
         ArrayList<Fahrzeug> fahrzeuge = new ArrayList<Fahrzeug>();
 
-        Fahrzeug f = new Fahrzeug();
-        f.fahren(-100);
-        f.stoppen();
-        f.fahren(500);
-        f.stoppen();
-        f.stoppen();
-        System.out.println(f);
+        fahrzeuge.add(new Fahrzeug());
+
+        fahrzeuge.get(0).fahren(-100);
+        fahrzeuge.get(0).stoppen();
+        fahrzeuge.get(0).fahren(500);
+        fahrzeuge.get(0).stoppen();
+        fahrzeuge.get(0).stoppen();
+        System.out.println(fahrzeuge.get(0));
 
         System.out.println("---");
 
