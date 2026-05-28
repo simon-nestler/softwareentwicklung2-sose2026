@@ -85,6 +85,8 @@ public class App {
 
     public static void fahrzeuge() {
 
+        ArrayList<Fahrzeug> fahrzeuge = new ArrayList<Fahrzeug>();
+
         Fahrzeug f = new Fahrzeug();
         f.fahren(-100);
         f.stoppen();
