@@ -21,29 +21,31 @@ public class Fahrzeug {
         this.name = "Das Fahrzeug";
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setAnzahlRaeder(int anzahlRaeder) {
-        this.anzahlRaeder = anzahlRaeder;
-    }
-
-    public void setHoechstgeschwindigkeit(int hoechstgeschwindigkeit) {
-        this.hoechstgeschwindigkeit = hoechstgeschwindigkeit;
-    }
-
-    public int getAnzahlRaeder() {
-        return this.anzahlRaeder;
-    }
-
-    public int getHoechstgeschwindigkeit() {
-        return this.hoechstgeschwindigkeit;
-    }
-
-    public int getGeschwindigkeit() {
-        return this.geschwindigkeit;
-    }
+    /*
+     * public void setName(String name) {
+     * this.name = name;
+     * }
+     * 
+     * public void setAnzahlRaeder(int anzahlRaeder) {
+     * this.anzahlRaeder = anzahlRaeder;
+     * }
+     * 
+     * public void setHoechstgeschwindigkeit(int hoechstgeschwindigkeit) {
+     * this.hoechstgeschwindigkeit = hoechstgeschwindigkeit;
+     * }
+     * 
+     * public int getAnzahlRaeder() {
+     * return this.anzahlRaeder;
+     * }
+     * 
+     * public int getHoechstgeschwindigkeit() {
+     * return this.hoechstgeschwindigkeit;
+     * }
+     * 
+     * public int getGeschwindigkeit() {
+     * return this.geschwindigkeit;
+     * }
+     */
 
     public void fahren(int geschwindigkeit) {
         this.geschwindigkeit = geschwindigkeit;
@@ -82,10 +84,13 @@ public class Fahrzeug {
         this.geschwindigkeit = 0;
     }
 
-    @Override
-    public String toString() {
-        return name + " mit " + this.anzahlRaeder + " Rädern, Höchstgeschwindigkeit: "
-                + this.hoechstgeschwindigkeit + " km/h, aktuelle Geschwindigkeit: "
-                + this.geschwindigkeit + " km/h";
-    }
+    /*
+     * @Override
+     * public String toString() {
+     * return name + " mit " + this.anzahlRaeder +
+     * " Rädern, Höchstgeschwindigkeit: "
+     * + this.hoechstgeschwindigkeit + " km/h, aktuelle Geschwindigkeit: "
+     * + this.geschwindigkeit + " km/h";
+     * }
+     */
 }
