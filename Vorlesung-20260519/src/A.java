@@ -6,14 +6,18 @@ public class A extends Object {
     // clone(): Erzeugt eine Kopie des Objekts
 
     protected int a;
+    public final static int KONSTANTE = 100;
+    protected final int wasBinIch;
 
     public A() {
         a = -1;
+        wasBinIch = 42;
         System.out.println("Konstruktor von A ohne Parameter");
     }
 
     public A(int a) {
         this.a = a;
+        wasBinIch = a;
         System.out.println("Konstruktor von A mit einem Parameter");
     }
 

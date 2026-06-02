@@ -6,6 +6,12 @@ public class D extends A {
         System.out.println("Konstruktor von D");
     }
 
+    @Override
+    public void eineMethodeInA() {
+        System.out.println("... und noch etwas mehr :-)");
+        super.eineMethodeInA();
+    }
+
     public void eineMethodeInD() {
         System.out.println("Eine Methode in D");
     }
