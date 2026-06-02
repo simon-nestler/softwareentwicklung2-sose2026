@@ -1,15 +1,15 @@
 import java.awt.GridLayout;
-import java.util.List;
+import java.util.ArrayList;
 import javax.swing.JFrame;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        List<Widget> oberflaeche = List.of(
-                new Ueberschrift("Anmeldung"),
-                new TextWidget("Bitte Daten eingeben:"),
-                new Eingabefeld("Benutzername"),
-                new Eingabefeld("Passwort"),
-                new Button("Anmelden"));
+        ArrayList<Widget> oberflaeche = new ArrayList<>();
+        oberflaeche.add(new Ueberschrift("Anmeldung"));
+        oberflaeche.add(new TextWidget("Bitte Daten eingeben:"));
+        oberflaeche.add(new Eingabefeld("Benutzername"));
+        oberflaeche.add(new Eingabefeld("Passwort"));
+        oberflaeche.add(new Button("Anmelden"));
 
         JFrame fenster = new JFrame("Eigene Widget-Hierarchie");
         fenster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
