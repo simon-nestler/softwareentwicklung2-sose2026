@@ -2,7 +2,19 @@ import java.util.ArrayList;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        fahrzeuge();
+        // fahrzeuge();
+        superReferenz();
+    }
+
+    public static void superReferenz() {
+        A a = new A();
+        D d = new D(100);
+
+        System.out.println("--- ---");
+
+        a.eineMethodeInA();
+        d.eineMethodeInA();
+        d.eineMethodeInD();
     }
 
     public static void vererbung() {
