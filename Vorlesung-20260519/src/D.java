@@ -6,6 +6,8 @@ public class D extends A {
         System.out.println("Konstruktor von D");
     }
 
+    // Neben überschreiben und erben von Methoden, können wir Methoden auch
+    // erweitern.
     @Override
     public void eineMethodeInA() {
         System.out.println("... und noch etwas mehr :-)");
