@@ -1,4 +1,4 @@
-public class D extends A {
+public class D extends A implements E {
     protected int d;
 
     public D(int a) {
@@ -16,6 +16,11 @@ public class D extends A {
 
     public void eineMethodeInD() {
         System.out.println("Eine Methode in D");
+    }
+
+    @Override
+    public void eineMethodeInE() {
+        System.out.println("Eine Methode in E, implementiert in D");
     }
 
     @Override

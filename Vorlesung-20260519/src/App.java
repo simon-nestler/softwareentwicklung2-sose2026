@@ -3,7 +3,32 @@ import java.util.ArrayList;
 public class App {
     public static void main(String[] args) throws Exception {
         // fahrzeuge();
-        superReferenz();
+        // superReferenz();
+        interfaceBeispiel2();
+    }
+
+    public static void interfaceBeispiel() {
+        ArrayList<E> list = new ArrayList<E>();
+        list.add(new C());
+        list.add(new D(100));
+
+        for (E e : list) {
+            e.eineMethodeInE();
+        }
+    }
+
+    public static void interfaceBeispiel2() {
+        ArrayList<A> list = new ArrayList<A>();
+        list.add(new A());
+        list.add(new C());
+        list.add(new D(100));
+
+        for (A a : list) {
+            if (a instanceof E) {
+                E e = (E) a;
+                e.eineMethodeInE();
+            }
+        }
     }
 
     public static void superReferenz() {

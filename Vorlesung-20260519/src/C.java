@@ -1,4 +1,4 @@
-public class C extends B {
+public class C extends B implements E {
     protected int c;
 
     public C() {
@@ -20,6 +20,11 @@ public class C extends B {
                 ", b=" + b +
                 ", c=" + c +
                 '}';
+    }
+
+    @Override
+    public void eineMethodeInE() {
+        System.out.println("Eine Methode in E, implementiert in C");
     }
 
 }
