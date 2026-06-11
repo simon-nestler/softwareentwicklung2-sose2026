@@ -5,11 +5,13 @@ public class App {
     public static void main(String[] args) throws Exception {
         // numberFormatExceptionBeispiel();
         // arrayIndexOutOfBoundsExceptionBeispiel();
-        bibliothekBeispiel();
+        // bibliothekBeispiel();
+
+        ExceptionHandling exceptionHandling = new ExceptionHandling();
     }
 
     public static void bibliothekBeispiel() {
-        Bibliothek bibliothek = new Bibliothek(10);
+        Bibliothek bibliothek = new Bibliothek();
 
         bibliothek.addBuch(0, "Der Herr der Ringe");
         bibliothek.addBuch(1, "Harry Potter");
