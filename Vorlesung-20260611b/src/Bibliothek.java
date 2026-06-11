@@ -11,6 +11,10 @@ public class Bibliothek {
     }
 
     public void getBuch(int index) {
-        System.out.println("Das Buch an Index " + index + " lautet: " + buecher[index]);
+        if (index >= 0 && index < buecher.length) {
+            System.out.println("Das Buch an Index " + index + " lautet: " + buecher[index]);
+        } else {
+            System.out.println("Der Index " + index + " ist ungültig!");
+        }
     }
 }
