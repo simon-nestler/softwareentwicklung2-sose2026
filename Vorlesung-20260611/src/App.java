@@ -10,6 +10,13 @@ public class App {
         // >>
 
         Sportart fussball = new Sportart();
+
+        // Instanzvariable name ist protected und ist daher aus
+        // der Klasse App nicht direkt zugreifbar (anderes Paket)
+
+        // fussball.name = "Fussball";
+        fussball.istMannschaftssport = true;
+
         Person person = new Person("Max", fussball);
 
         de.thi.nestler.uni.Kurs kurs = new de.thi.nestler.uni.Kurs();

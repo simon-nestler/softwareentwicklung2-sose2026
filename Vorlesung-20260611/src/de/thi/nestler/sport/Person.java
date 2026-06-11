@@ -8,6 +8,9 @@ public class Person {
     public Person(String vorname, Sportart sportart) {
         this.vorname = vorname;
         this.sportart = sportart;
+        sportart.name = "Laufen";
+        sportart.istMannschaftssport = false;
+
         System.out.println("Person (Sport) " + vorname + " wurde erstellt. Sie macht die Sportart " + sportart.name);
     }
 
