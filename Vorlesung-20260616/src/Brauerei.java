@@ -26,8 +26,7 @@ public class Brauerei {
             throws KeinWasserAusnahme, NichtGenugZutataAusnahme {
         // Spezifische Störung: Anschluss defekt
         if (!wasserAnschlussOk) {
-            throw new KeinWasserAusnahme(
-                    "Störung am Wasseranschluss: Leitung liefert kein Wasser.");
+            throw new KeinWasserAusnahme("Störung am Wasseranschluss: Leitung liefert kein Wasser.");
         }
         // Erweiterte Exception mit Zusatzinfos: Malz reicht nicht
         if (malz < malzMenge) {

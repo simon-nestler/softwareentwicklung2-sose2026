@@ -14,6 +14,10 @@ public class App {
 
         System.out.println("\n=== Durchlauf 4: kein Hopfen / falsche Hefe ===");
         bierBrauen(new Brauerei(300, 50, 0, "obergärig", true));
+
+        Braumeister max = new Braumeister();
+        System.out.println("\n=== Letzter Test: " + max.getName() + " ===");
+        System.out.println("Länge des Namens: " + max.getLaengeDesNamens());
     }
 
     public static void bierBrauen(Brauerei brauerei) {
