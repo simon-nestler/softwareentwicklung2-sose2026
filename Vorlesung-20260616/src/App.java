@@ -23,7 +23,11 @@ public class App {
     public static void bierBrauen(Brauerei brauerei) {
         try {
             brauerei.maischen(40, 250);
+
+            // Laeutern steht im try-Block, da es von einer riskanten Operation abhängt
+            // (Maischen).
             brauerei.laeutern();
+
             brauerei.kochen(80);
             brauerei.gärung();
             brauerei.abfuellen();
