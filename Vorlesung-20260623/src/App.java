@@ -3,7 +3,12 @@ public class App {
         // sequentiell();
         // runnable();
         // thread();
-        complexesBeispiel();
+        // complexesBeispiel();
+
+        // Probleme bei Nebenläufigkeit (siehe Folien):
+        problemSteckenbleiben(); // Case 1
+        // problemNichtInitialisiert(); // Case 2
+        // problemUnsaubereDaten(); // Case 3
     }
 
     public static void thread() {
@@ -36,5 +41,53 @@ public class App {
 
         thread.start();
         thread2.start();
+    }
+
+    // ----- Probleme bei Nebenläufigkeit -----
+
+    // Case 1: Thread bleibt "stecken"
+    public static void problemSteckenbleiben() throws InterruptedException {
+        Zaehler zaehler = new Zaehler();
+        ZaehlThread t1 = new ZaehlThread(zaehler, 10);
+        ZaehlThread t2 = new ZaehlThread(zaehler, 20);
+
+        t1.start();
+        t2.start();
+
+        Thread.sleep(1000);
+        System.out.println("Status nach 1 Sekunde:");
+        System.out.println("  Thread (Ziel 10) noch aktiv? " + t1.isAlive());
+        System.out.println("  Thread (Ziel 20) noch aktiv? " + t2.isAlive());
+        System.out.println("  Aktueller Zaehlerwert: " + zaehler.wert);
+
+        // Stecken gebliebene Threads würden die JVM ewig laufen lassen
+        // -> Demo sauber beenden:
+        System.exit(0);
+    }
+
+    // Case 2: Objekt nicht initialisiert (NullPointer)
+    public static void problemNichtInitialisiert() throws InterruptedException {
+        PersonHalter halter = new PersonHalter();
+        SetzerThread setzer = new SetzerThread(halter);
+        PruefThread pruefer = new PruefThread(halter);
+
+        setzer.start();
+        pruefer.start();
+
+        setzer.join();
+        pruefer.join();
+    }
+
+    // Case 3: Unsaubere Daten
+    public static void problemUnsaubereDaten() throws InterruptedException {
+        PersonDaten daten = new PersonDaten(26, 78);
+        SchreiberThread schreiber = new SchreiberThread(daten);
+        LeserThread leser = new LeserThread(daten);
+
+        schreiber.start();
+        leser.start();
+
+        schreiber.join();
+        leser.join();
     }
 }
