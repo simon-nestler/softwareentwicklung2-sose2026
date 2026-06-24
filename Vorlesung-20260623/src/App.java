@@ -48,16 +48,16 @@ public class App {
     // Case 1: Thread bleibt "stecken"
     public static void problemSteckenbleiben() throws InterruptedException {
         Zaehler zaehler = new Zaehler();
-        ZaehlThread t1 = new ZaehlThread(zaehler, 10);
-        ZaehlThread t2 = new ZaehlThread(zaehler, 20);
+        ZaehlThread t1 = new ZaehlThread(zaehler, 100000);
+        ZaehlThread t2 = new ZaehlThread(zaehler, 200000);
 
         t1.start();
         t2.start();
 
         Thread.sleep(1000);
         System.out.println("Status nach 1 Sekunde:");
-        System.out.println("  Thread (Ziel 10) noch aktiv? " + t1.isAlive());
-        System.out.println("  Thread (Ziel 20) noch aktiv? " + t2.isAlive());
+        System.out.println("  Thread (Ziel 100.000) noch aktiv? " + t1.isAlive());
+        System.out.println("  Thread (Ziel 200.000) noch aktiv? " + t2.isAlive());
         System.out.println("  Aktueller Zaehlerwert: " + zaehler.wert);
 
         // Stecken gebliebene Threads würden die JVM ewig laufen lassen

@@ -8,7 +8,7 @@ public class LeserThread extends Thread {
 
     @Override
     public void run() {
-        for (int i = 0; i < 10_000_000; i++) {
+        for (int i = 0; i < 10000000; i++) {
             PersonDaten kopie = daten.copy();
             int alter = kopie.getAlter();
             double gewicht = kopie.getGewicht();

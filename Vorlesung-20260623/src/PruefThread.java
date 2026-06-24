@@ -8,7 +8,7 @@ public class PruefThread extends Thread {
 
     @Override
     public void run() {
-        for (int i = 0; i < 2_000_000; i++) {
+        for (int i = 0; i < 2000000; i++) {
             if (halter.person != null) {
                 // Zwischen Prüfung und Zugriff vergeht Zeit (hier: yield()).
                 // In dieser Lücke kann der andere Thread halter.person = null setzen!
