@@ -6,7 +6,8 @@ public class App {
         // complexesBeispiel();
 
         // Probleme bei Nebenläufigkeit (siehe Folien):
-        problemSteckenbleiben(); // Case 1
+
+        // problemSteckenbleiben(); // Case 1
         // problemNichtInitialisiert(); // Case 2
         // problemUnsaubereDaten(); // Case 3
     }
