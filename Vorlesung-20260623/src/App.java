@@ -9,7 +9,7 @@ public class App {
 
         // problemSteckenbleiben(); // Case 1
         // problemNichtInitialisiert(); // Case 2
-        // problemUnsaubereDaten(); // Case 3
+        problemUnsaubereDaten(); // Case 3
     }
 
     public static void thread() {

@@ -8,12 +8,18 @@ public class PersonDaten {
         this.gewicht = gewicht;
     }
 
-    public void update(int alter, double gewicht) {
+    // Durch synchronized wird diese Methode nicht von anderen
+    // Methoden unterbrochen.
+
+    public synchronized void update(int alter, double gewicht) {
         this.alter = alter;
         this.gewicht = gewicht;
     }
 
-    public PersonDaten copy() {
+    // Alle Methoden, die nur von einem Thread gleichzeitig betreten
+    // werden dürfen, brauchen das Schlüsselwort "synchronized".
+
+    public synchronized PersonDaten copy() {
         return new PersonDaten(this.alter, this.gewicht);
     }
 

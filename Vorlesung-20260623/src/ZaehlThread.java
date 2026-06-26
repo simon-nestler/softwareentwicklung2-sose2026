@@ -13,7 +13,10 @@ public class ZaehlThread extends Thread {
         // Beide Threads zählen denselben (gemeinsamen) Wert hoch.
         // Da beide gleichzeitig erhöhen, springt der Wert über das eigene Ziel
         // hinweg -> die Bedingung wert != ziel wird nie mehr falsch -> stecken.
-        while (zaehler.wert != ziel) {
+
+        // LÖSUNG: Wenn wir hier != durch < ersetzen, dann wird der Thread1
+        // auf jeden Fall beendet.
+        while (zaehler.wert < ziel) {
             zaehler.wert = zaehler.wert + 1;
         }
         System.out.println("Thread mit Ziel " + ziel + " hat sein Ziel erreicht.");
