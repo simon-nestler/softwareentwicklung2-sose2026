@@ -17,7 +17,8 @@ public class Hauptgericht extends Gericht {
 
     @Override
     public double berechnePreis() {
-        // Vegetarische Hauptgerichte sind 50 Cent günstiger (THI-Nachhaltigkeitsrabatt).
+        // Vegetarische Hauptgerichte sind 50 Cent günstiger
+        // (THI-Nachhaltigkeitsrabatt).
         if (vegetarisch) {
             return grundpreis - 0.50;
         }

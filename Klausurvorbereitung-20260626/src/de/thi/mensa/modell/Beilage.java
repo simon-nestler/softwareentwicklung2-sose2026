@@ -18,14 +18,12 @@ public class Beilage extends Gericht {
     }
 
     /**
-     * Diese Methode ist final: Unterklassen von Beilage dürfen sie NICHT überschreiben.
+     * Diese Methode ist final: Unterklassen von Beilage dürfen sie NICHT
+     * überschreiben.
      * (Vorbild: Fahrrad.geraeuschMachen() in Vorlesung-20260519.)
      */
     @Override
     public final String beschreibung() {
-        // TODO (Thema Vererbung): Gib einen String der Form
-        //   "Beilage: <name>"
-        // zurück. Nutze das geerbte Feld 'name'.
-        return null; // <-- ersetzen
+        return "Beilage: " + name;
     }
 }

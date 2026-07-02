@@ -132,7 +132,7 @@ Fügen Sie bitte über "Feld hinzufügen" eine eigene Spalte ein - und geben Sie
 
 **5.2 [Wissen]** `SpeisekarteFenster` erbt **nicht** von `JFrame`, sondern hält ein `JFrame` als Feld. Wie heißt dieses Prinzip, und warum wird es im Kurs gegenüber `extends JFrame` bevorzugt?
 
-> Antwort: 
+> Antwort: Wir erben in unserem GUI-Beispiel nicht von den Swing-Klassen, sondern benutzen diese einfach. Statt "is a" haben wir also eine "uses"-Beziehung. Unsere eigenes Fenster ist also kein JFrame, sondern es benutzt einen JFrame, um sich selbst zu rendern. Das gibt uns mehr Flexibilität bei der Ausgestaltung der Methoden - und wir können auch die Menge der verfügbaren Methoden einschränken. Bei Vererbung wären ja immer alle Methoden aus JFrame verfügbar, bei einer eigenen Klasse ist das nicht der Fall.
 
 **5.3 [Wissen]** Das Panel nutzt `new GridLayout(0, 1, 5, 5)`. Was bedeutet die `0` als erstes Argument, und wie werden die Gerichte dadurch angeordnet?
 
@@ -153,23 +153,23 @@ Fügen Sie bitte über "Feld hinzufügen" eine eigene Spalte ein - und geben Sie
 
 **6.1 [Lücke]** In `Beilage.beschreibung()` ist der Rumpf unvollständig (`// TODO (Thema Vererbung)`). Ergänze ihn so, dass `"Beilage: <name>"` zurückgegeben wird.
 
-> Antwort (die return-Zeile): 
+> Antwort (die return-Zeile): return "Beilage: " + name;
 
 **6.2 [Wissen]** `Gericht` ist `abstract` und hat die abstrakten Methoden `berechnePreis()` und `beschreibung()`. Was bedeutet das für (a) `new Gericht(...)` und (b) jede konkrete Unterklasse?
 
-> Antwort:
+> Antwort: (a) ist nicht möglich. Der Befehl führt zu einem Compilerfehler. Von abstrakten Klassen können keine Objekte erstellt werden. (b) Konkrete Unterklassen müssen die abstrakten Methoden berechnePreis() und beschreibung() implementieren.
 
 **6.3 [Wissen]** `Aktionsgericht.berechnePreis()` ruft `super.berechnePreis()` auf. Welche Methode wird damit ausgeführt, und warum nutzt man `super` statt den Preis komplett neu zu berechnen?
 
-> Antwort:
+> Antwort: Es wird berechnePreis aus der Klasse Hauptgericht aufgerufen. Führt dazu, dass der Preis von Aktionsgerichten sich am Preis der Hauptgerichte orientiert, also vegetarische Gerichte 0,50 € günstiger sind. Dadurch vermeiden wir erstes Codeduplizierung und zweitens auch Inkonsistenzen (wenn wir den duplizierten Code später einmal ändern).
 
 **6.4 [Wissen]** In `App.gerichteUndPolymorphie()` stehen alle Objekte in `ArrayList<Gericht>`, und `g.berechnePreis()` liefert je nach echtem Typ ein anderes Ergebnis. Wie heißt dieses Prinzip, und warum braucht man keine `instanceof`-Fallunterscheidung?
 
-> Antwort:
+> Antwort: Wir nennen das Polymorphie oder dynamisches Binden. BerechnePreis ist eine Methode aus Gericht, die Methode kann also für alle Gerichte ausgeführt werden. Je nach Typ wird die Methode aus der jeweiligen Unterklasse verwendet. Nicht der Typ der Referenz ArrayList<Gericht> bestimmt, welche Methode aufgerufen wird, sondern der Typ des referenzieren Objekts.
 
 **6.5 [Korrektur]** `Beilage.beschreibung()` ist `final`. Angenommen, jemand schreibt `class Tagessuppe extends Beilage` und versucht, `beschreibung()` zu überschreiben. Was passiert, und auf welcher Ebene (Compiler/Laufzeit) wird das gemeldet?
 
-> Antwort:
+> Antwort: Finalen Methoden dürfen in Unterklassen nicht überschrieben werden. Der Compiler erkennt das, das Programm lässt sich nicht compilieren (und nicht ausführen).
 
 ---
 
@@ -203,23 +203,24 @@ Fügen Sie bitte über "Feld hinzufügen" eine eigene Spalte ein - und geben Sie
 
 **8.1 [Lücke]** In `GuthabenAusnahme.getFehlbetrag()` fehlt die Berechnung (`// TODO (Thema Exceptions)`). Ergänze sie so, dass der fehlende Betrag (`benoetigt - vorhanden`) zurückgegeben wird.
 
-> Antwort (die return-Zeile):
+> Antwort (die return-Zeile): return benoetigt - vorhanden;
 
 **8.2 [Lücke]** In `Mensa.abrechnen(...)` fehlt in „Prüfung 2" das Werfen der Ausnahme (`// TODO (Thema Exceptions)`). Ergänze die Zeile, die eine `GuthabenAusnahme` mit Guthaben und Preis wirft.
 
-> Antwort (die fehlende Zeile):
+> Antwort (die fehlende Zeile): throw new GuthabenAusnahme(kunde.getGuthaben(), preis);
 
 **8.3 [Wissen]** Die Klassen liegen in verschiedenen Paketen (`modell`, `ausnahmen`). Warum muss `Mensa.java` die Ausnahmen mit `import de.thi.mensa.ausnahmen.…` einbinden, `Hauptgericht` und `Gericht` (gleiches Paket `modell`) dagegen nicht?
 
-> Antwort:
+> Antwort: Um die Ausnahmen in einem anderen Paket verwenden zu können muss man das ausnahmenPaket in das andere importieren. Dadurch hat man Zugriff auf Klassen des importierten Paketes und auch auf deren Methoden. Gericht und Hauptgericht muss nicht importiert werden, da sich diese genau im selben Paket wie Mensa befinden.
 
 **8.4 [Korrektur]** In `App.bestellungUndExceptions()` stehen die `catch`-Blöcke in der Reihenfolge: `GerichtAusverkauftAusnahme`, `GuthabenAusnahme`, `MensaAusnahme`. Was würde der Compiler melden, wenn man `catch (MensaAusnahme e)` **an den Anfang** stellt? Begründe mit der Vererbungshierarchie der Ausnahmen.
 
-> Antwort:
+> Antwort: Da 'GerichtAusverkauftAusnahme' oder 'GuthabenAusnahme' eine Unterklasse von 'MensaAusnahme' sind würde immer direkt die 'MensaAusnahme' gecatched werden (eine GerichtAusverkauftAusnahme oder GuthabenAusnahme sind MensaAusnahmen) und die anderen beiden Ausnahmen könnten nicht erreicht werden. 
+Bei der falschen Reihenfolge würde der Compiler melden, dass es sich bei den spezifischeren Ausnahmebehandlungen um "nicht erreichbare Codebereiche" handelt.
 
 **8.5 [Wissen]** `abrechnen` ist mit `throws MensaAusnahme` deklariert, obwohl es konkret `GerichtAusverkauftAusnahme` und `GuthabenAusnahme` wirft. Warum genügt es, die gemeinsame Oberklasse zu deklarieren?
 
-> Antwort:
+> Antwort: Weil die Unterklassen auch MensaAusnahmen sind und in dem Statement "throws MensaAusnahme" beinhaltet sind.
 
 ---
 

@@ -49,9 +49,7 @@ public class Mensa {
 
         // Prüfung 2: Reicht das Guthaben?
         if (kunde.getGuthaben() < preis) {
-            // TODO (Thema Exceptions): Wirf eine GuthabenAusnahme und übergib
-            // das vorhandene Guthaben sowie den benötigten Preis.
-
+            throw new GuthabenAusnahme(kunde.getGuthaben(), preis);
         }
 
         kunde.abbuchen(preis);
