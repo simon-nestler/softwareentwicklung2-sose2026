@@ -10,6 +10,7 @@ import de.thi.mensa.modell.Gericht;
 import de.thi.mensa.modell.Hauptgericht;
 import de.thi.mensa.modell.Mensa;
 import de.thi.mensa.modell.Rabattfaehig;
+import de.thi.mensa.modell.ShallowCopy;
 import de.thi.mensa.modell.Student;
 import de.thi.mensa.nebenlaeufig.KassenThread;
 import de.thi.mensa.nebenlaeufig.Kassenstand;
@@ -25,10 +26,25 @@ public class App {
     public static void main(String[] args) throws Exception {
         // gerichteUndPolymorphie();
         // bestellungUndExceptions();
-        // rekursionUndSortieren();
+        rekursionUndSortieren();
         // interfacesUndCasting();
         // threads();
-        gui();
+        // gui();
+
+        // copyKonstruktor();
+        // ShallowCopy.demonstrateShallowCopy();
+    }
+
+    public static void copyKonstruktor() {
+        Student student1 = new Student("Max", 22241);
+        System.out.println(student1);
+        Student student2 = new Student(student1);
+        System.out.println(student2);
+        student2.setName("Lorenz");
+
+        System.out.println(student1);
+        System.out.println(student2);
+
     }
 
     /** Thema 6/7: Vererbung, Polymorphie, abstrakte Methoden. */
@@ -84,6 +100,8 @@ public class App {
         mensa.aufnehmen(new Hauptgericht("Schnitzel mit Pommes", 5.50, false));
         mensa.aufnehmen(new Beilage("Gemischter Salat", 1.80));
         mensa.aufnehmen(new Aktionsgericht("Mensa-Burger", 5.00, false, 1.00));
+        mensa.aufnehmen(new Hauptgericht("Gemüsecurry", 4.80, true));
+        mensa.aufnehmen(new Beilage("Pommes", 1.50));
 
         System.out.println("Vor dem Sortieren:");
         mensa.speisekarteAusgeben();
@@ -137,6 +155,8 @@ public class App {
         speisekarte.add(new Hauptgericht("Schnitzel mit Pommes", 5.50, false));
         speisekarte.add(new Beilage("Gemischter Salat", 1.80));
         speisekarte.add(new Aktionsgericht("Mensa-Burger", 5.00, false, 1.00));
+        speisekarte.add(new Hauptgericht("Gemüsecurry", 4.80, true));
+        speisekarte.add(new Beilage("Pommes", 1.50));
 
         de.thi.mensa.gui.SpeisekarteFenster fenster = new de.thi.mensa.gui.SpeisekarteFenster(speisekarte);
         fenster.anzeigen();

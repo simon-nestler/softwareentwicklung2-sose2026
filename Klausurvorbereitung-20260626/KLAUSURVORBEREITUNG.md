@@ -28,23 +28,23 @@ Fügen Sie bitte über "Feld hinzufügen" eine eigene Spalte ein - und geben Sie
 
 **1.1 [Wissen]** `Student` besitzt drei Konstruktoren. Beschreibe, was beim Aufruf `new Student("Max", 12345)` Schritt für Schritt passiert (Stichwort `this(...)`-Verkettung).
 
-> Antwort:
+> Antwort: Der Konstruktor Student(String name, int matrikelnummer) wird aufgerufen. Dieser Konstruktor ruft über this(name, matrikelnummer, 0.0) den Konstruktor mit drei Parametern auf: Student(String name, int matrikelnummer, double guthaben). Der Konstruktor ruft per super() den Konstruktor von Objekt auf und setzt dann die drei Instanzvariablen und erhöht die Anzahl der Studenten. 
 
 **1.2 [Wissen]** Der Copy-Konstruktor `Student(Student anderer)` ruft `this(anderer.name, ...)` auf. Warum darf er auf `anderer.name` direkt zugreifen, obwohl `name` `private` ist?
 
-> Antwort:
+> Antwort: Auf private Instanzvariablen kann das Objekt selbst innerhalb der gleichen Klasse zugreifen. Aber wir können zusätzlich auch auf andere Objekte der gleichen Klasse (hier: anderer) zugreifen.
 
 **1.3 [Wissen]** `anzahlStudenten` ist `static`. Was liefert `Student.getAnzahlStudenten()` zurück, nachdem in `bestellungUndExceptions()` ein Student angelegt wurde – und warum braucht man dafür kein Objekt?
 
-> Antwort:
+> Antwort: Die Anzahl ist 1. Da die Methode static ist, kann sie über die Klasse aufgerufen werden.
 
 **1.4 [Korrektur]** In `Student` gibt es die Methode `abbuchen(double betrag)`. Sie prüft den Betrag **nicht** auf Plausibilität. Welches unerwünschte Verhalten ist dadurch möglich, und wie würdest du es absichern? (Es muss nichts implementiert werden – nur begründen.)
 
-> Antwort:
+> Antwort: Wir sollten sicherstellen, dass durch das Abbuchen das Guthaben nicht negativ wird. Außerdem sollte geprüft werden, dass der Betrag positiv ist - sonst wird aus dem Abbuchen ein Aufladen.
 
-**1.5 [Wissen]** Wenn man in `App.gerichteUndPolymorphie()` zwei Studenten per Copy-Konstruktor erzeugt und beim zweiten den Namen ändert – ändert sich dadurch der erste? Begründe mit dem Aufbau des Copy-Konstruktors.
+**1.5 [Wissen]** Wenn man in `App` zwei Studenten per Copy-Konstruktor erzeugt und beim zweiten den Namen ändert – ändert sich dadurch der erste? Begründe mit dem Aufbau des Copy-Konstruktors.
 
-> Antwort:
+> Antwort: Der erste Namen ändert sich nicht. String ist zwar ein Objekt. Es verhält sich in diesem Beispiel aber ähnlich wie primitve Datentypen: Es wird eine echte Kopie erzeugt (weil Strings immutable sind, also nachträglich nicht verändert werden können). Bei anderen Objekten würden sich bei dieser Art des Kopierens auch die Eigenschaften des ersten Objektes ändern (es werden Referenzen kopiert - keine Objekte). Wir nennen diese Art des Kopierens daher auch "shallow copy".
 
 ---
 
@@ -103,23 +103,23 @@ Fügen Sie bitte über "Feld hinzufügen" eine eigene Spalte ein - und geben Sie
 
 **4.1 [Lücke]** In `Mensa.summeAb(int index)` ist die rechte Seite der `return`-Zeile unvollständig (`// TODO (Thema Rekursion)`). Ergänze sie so, dass der Preis des aktuellen Gerichts plus die Summe des Rests zurückgegeben wird.
 
-> Antwort (die vollständige return-Zeile):
+> Antwort (die vollständige return-Zeile): return speisekarte.get(index).berechnePreis() + summeAb(index + 1);
 
 **4.2 [Wissen]** Was ist der **Basisfall** von `summeAb`, und warum würde ohne ihn ein Laufzeitfehler entstehen? Wie heißt dieser Fehler?
 
-> Antwort:
+> Antwort: "Basisfall" = Rekursionsanker (= Abbruchbedingung), ohne ihn würde es zu einer Endlosschleife kommen und ein Index out of Bounds fehler würde entstehen, sobald der Index >= der size des Array ist
 
 **4.3 [Wissen]** `nachPreisSortieren()` ist ein Bubble-Sort mit zwei verschachtelten Schleifen. Erkläre, was die innere Schleife in einem Durchlauf bewirkt (Stichwort: „das größte Element wandert nach hinten").
 
-> Antwort:
+> Antwort: Das größte Element aus dem bisher noch unsortierten Bereich wird an das Ende der Liste verschoben. 
 
 **4.4 [Wissen]** Warum läuft die innere Schleife nur bis `speisekarte.size() - 1 - i` und nicht bis zum Ende? Was wäre der Effekt, wenn man das `- i` weglässt?
 
-> Antwort:
+> Antwort: Das " - i" verhindert, dass wir erneut durch den bereits sortierten Bereich laufen (am Ende der Liste). Denn am Ende der Liste sind die Elemente bereits sortiert. Wenn wir bis zum Ende laufen würden, gäbe es noch ein paar unnötige Vergleiche. Der Algorithmus würde weiterhin funktionieren, wäre aber nicht ganz so effizient.
 
 **4.5 [Korrektur]** Der Bubble-Sort sortiert nach `berechnePreis()`. Da `berechnePreis()` bei `Aktionsgericht` den Rabatt abzieht, wird nach dem **Endpreis** sortiert, nicht nach dem `grundpreis`. Ist das ein Fehler oder gewolltes Verhalten? Begründe anhand der Aufgabenstellung „Speisekarte aufsteigend nach Preis".
 
-> Antwort:
+> Antwort: Die Sortierung macht Sinn, da die Kundinnen und Kunden sich in der Regel am tatsächlichen Preis orientieren - und nicht nach dem Grundpreis.
 
 ---
 
@@ -153,7 +153,7 @@ Fügen Sie bitte über "Feld hinzufügen" eine eigene Spalte ein - und geben Sie
 
 **6.1 [Lücke]** In `Beilage.beschreibung()` ist der Rumpf unvollständig (`// TODO (Thema Vererbung)`). Ergänze ihn so, dass `"Beilage: <name>"` zurückgegeben wird.
 
-> Antwort (die return-Zeile):
+> Antwort (die return-Zeile): 
 
 **6.2 [Wissen]** `Gericht` ist `abstract` und hat die abstrakten Methoden `berechnePreis()` und `beschreibung()`. Was bedeutet das für (a) `new Gericht(...)` und (b) jede konkrete Unterklasse?
 

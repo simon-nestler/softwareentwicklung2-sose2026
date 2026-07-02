@@ -4,9 +4,9 @@ package de.thi.mensa.modell;
  * Ein Studierender, der in der Mensa bestellt.
  *
  * Thema: OOP & Konstruktoren
- *  - Copy-Konstruktor (Vorbild: Person in Vorlesung-20260317)
- *  - static-Zähler (Vorbild: Button.anzahlButtons in Vorlesung-20260326)
- *  - Konstruktor-Verkettung mit this(...)
+ * - Copy-Konstruktor (Vorbild: Person in Vorlesung-20260317)
+ * - static-Zähler (Vorbild: Button.anzahlButtons in Vorlesung-20260326)
+ * - Konstruktor-Verkettung mit this(...)
  */
 public class Student {
 
@@ -48,6 +48,10 @@ public class Student {
 
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public double getGuthaben() {

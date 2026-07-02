@@ -10,9 +10,9 @@ import de.thi.mensa.ausnahmen.MensaAusnahme;
  * Die Mensa: verwaltet die Speisekarte und wickelt Bestellungen ab.
  *
  * Themen:
- *  - Exceptions werfen (throws, throw) – Vorbild: Brauerei (Vorlesung-20260616)
- *  - Rekursion – Vorbild: Rekursion.fakultaet (Vorlesung-20260428)
- *  - Sortieren – einfacher Bubble-Sort auf der Speisekarte
+ * - Exceptions werfen (throws, throw) – Vorbild: Brauerei (Vorlesung-20260616)
+ * - Rekursion – Vorbild: Rekursion.fakultaet (Vorlesung-20260428)
+ * - Sortieren – einfacher Bubble-Sort auf der Speisekarte
  */
 public class Mensa {
 
@@ -74,7 +74,7 @@ public class Mensa {
         // TODO (Thema Rekursion): Ersetze die rechte Seite so, dass der
         // Preis des aktuellen Gerichts plus der rekursive Aufruf für den
         // Rest der Liste zurückgegeben wird.
-        return speisekarte.get(index).berechnePreis() + 0.0; // <-- 0.0 ersetzen
+        return speisekarte.get(index).berechnePreis() + summeAb(index + 1); // <-- 0.0 ersetzen
     }
 
     /**
